@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setintervel</title>
+</head>
+<body>
+    <div>
+
+    </div>
+    <button onclick="stop()">button</button>
+    <script>
+        let a=0;
+        function set(){
+            document.getElementsByTagName('div')[0].innerHTML+=a+"<br>";
+            a++;
+            if(a==40){
+                a=0;  
+            }
+        }
+        let s=setInterval(set,200);
+        function stop(){
+            clearInterval(s);
+        }
+    </script>
+</body>
+</html>

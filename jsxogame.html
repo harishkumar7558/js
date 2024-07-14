@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XO Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div id="win" class="container" style="background-size: 100% 100%;">
+
+        <div class="d-flex justify-content-between mt-2">
+            <div class="para border border-3 border-info w-25 " style="height: 150px; background-size: 100% 100%;" onclick="cric(0)"></div>
+            <div  class="para border border-3 border-info w-25" style="height: 150px; background-size: 100% 100%" onclick="cric(1)"></div>
+            <div class="para border border-3 border-info w-25" style="height: 150px; background-size: 100% 100%" onclick="cric(2)"></div>
+        </div>
+        <div class="d-flex justify-content-between mt-2">
+            <div class="para border border-3 border-primary w-25" style="height: 150px; background-size: 100% 100%" onclick="cric(3)"></div>
+            <div class="para border border-3 border-primary w-25" style="height: 150px; background-size: 100% 100%" onclick="cric(4)"></div>
+            <div class="para border border-3 border-primary w-25" style="height: 150px; background-size: 100% 100%" onclick="cric(5)"></div>
+        </div>
+        <div class="d-flex justify-content-between mt-2">
+            <div class="para border border-3 border-success w-25" style="height: 150px; background-size: 100% 100%" onclick="cric(6)"></div>
+            <div class="para border border-3 border-success w-25" style="height: 150px; background-size: 100% 100%" onclick="cric(7)"></div>
+            <div class="para border border-3 border-success w-25" style="height: 150px; background-size: 100% 100%" onclick="cric(8)"></div>
+        </div>
+        <div class="border border-3 border-danger" id="winner" style="width: 400px; height: 200px; position: absolute; background-size: 100% 100%; top: 52%; left: 36%; display: none;">
+            <h3 class="text-white text-center">WINNER</h3>
+        </div>
+    </div>
+
+    <script>
+        let b=0;
+        let arr=[0,0,0,0,0,0,0,0,0];
+        function cric(a){
+            if(b==0 && arr[a]===0){
+                document.getElementsByClassName('para')[a].style.backgroundImage="url(https://cdn.dribbble.com/users/6425/screenshots/5240051/x-dribbble-2.gif)";
+                let num=1;
+                arr[a]=num;
+                check(arr,num,b);
+                b++;
+
+            }
+            else if(b==1 && arr[a]===0){
+                document.getElementsByClassName('para')[a].style.backgroundImage="url(https://cdn.dribbble.com/users/2032053/screenshots/4045725/artachestvo2.gif)";   
+                let  num=2;
+                arr[a]=num;
+                check(arr,num,b);
+                b--;
+            }
+            
+            else{
+                alert("wrong move");
+            }
+           
+        }
+        function check(arr,num,b){          
+            if(arr[0]==num && arr[1]==num && arr[2]==num ){
+                for(let i=0;i<9;i++){
+                    document.getElementsByClassName('para')[i].style.zIndex=-5;
+                }
+                
+              document.getElementById("win").style.backgroundImage="url(https://miro.medium.com/v2/resize:fit:596/0*-oeOl0X94flXcxDR.gif)";
+              img(b);
+             
+            }
+            else if(arr[3]==num && arr[4]==num  && arr[5]==num  ){
+                for(let i=0;i<9;i++){
+                    document.getElementsByClassName('para')[i].style.zIndex=-5;
+                }
+                document.getElementById("win").style.backgroundImage="url(https://miro.medium.com/v2/resize:fit:596/0*-oeOl0X94flXcxDR.gif)";
+                img(b);
+            }
+            else if(arr[6]==num  && arr[7]==num  && arr[8]==num  ){
+                for(let i=0;i<9;i++){
+                    document.getElementsByClassName('para')[i].style.zIndex=-5;
+                }
+                document.getElementById("win").style.backgroundImage="url(https://miro.medium.com/v2/resize:fit:596/0*-oeOl0X94flXcxDR.gif)";
+                img(b);
+            }
+            else if(arr[0]==num && arr[3]==num  && arr[6]==num  ){
+                for(let i=0;i<9;i++){
+                    document.getElementsByClassName('para')[i].style.zIndex=-5;
+                }
+                document.getElementById("win").style.backgroundImage="url(https://miro.medium.com/v2/resize:fit:596/0*-oeOl0X94flXcxDR.gif)";
+                img(b);
+            }
+            else if(arr[1]==num  && arr[4]==num  && arr[7]==num  ){
+                for(let i=0;i<9;i++){
+                    document.getElementsByClassName('para')[i].style.zIndex=-5;
+                }
+                document.getElementById("win").style.backgroundImage="url(https://miro.medium.com/v2/resize:fit:596/0*-oeOl0X94flXcxDR.gif)";
+                img(b);
+            }
+            else if(arr[2]==num  && arr[5]==num  && arr[8]==num  ){
+                for(let i=0;i<9;i++){
+                    document.getElementsByClassName('para')[i].style.zIndex=-5;
+                }
+                document.getElementById("win").style.backgroundImage="url(https://miro.medium.com/v2/resize:fit:596/0*-oeOl0X94flXcxDR.gif)";
+                img(b);
+            }
+            else if(arr[2]==num && arr[4]==num  && arr[6]==num  ){
+                for(let i=0;i<9;i++){
+                    document.getElementsByClassName('para')[i].style.zIndex=-5;
+                }
+                document.getElementById("win").style.backgroundImage="url(https://miro.medium.com/v2/resize:fit:596/0*-oeOl0X94flXcxDR.gif)";
+                img(b);
+            }
+            else if(arr[0]==num  && arr[4]==num  && arr[8]==num  ){
+                for(let i=0;i<9;i++){
+                    document.getElementsByClassName('para')[i].style.zIndex=-5;
+                }
+                document.getElementById("win").style.backgroundImage="url(https://miro.medium.com/v2/resize:fit:596/0*-oeOl0X94flXcxDR.gif)";
+                img(b);
+            }
+        }
+        function img(b){
+            if(b==0){
+              document.getElementById("winner").style.display="block";
+              document.getElementById("winner").style.backgroundImage="url(https://cdn.dribbble.com/users/6425/screenshots/5240051/x-dribbble-2.gif)";
+              }
+              else if(b==1){
+                document.getElementById("winner").style.display="block";
+              document.getElementById("winner").style.backgroundImage="url(https://cdn.dribbble.com/users/2032053/screenshots/4045725/artachestvo2.gif)";
+              }
+        }
+    </script>
+</body>
+</html>

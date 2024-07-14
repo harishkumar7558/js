@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <div class="one">
+        <form id="form" >
+            <label for="name">Name</label><br>
+            <input type="text" id="name" onmouseout="ck()" name="username"><br><br>
+
+            <input class="btn btn-info"  type="submit" name="username">
+        </form>
+    </div>
+    <script>
+        function ck(){
+            document.getElementById('name').style.backgroundColor="skyblue";
+        }
+    </script>
+</body>
+</html>

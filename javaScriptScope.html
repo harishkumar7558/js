@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d-flex{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+</div>
+    <script>
+        let text="";
+        let cars =["valvo","benz","mercidices","lambo","ferari","gt","omni"];
+
+        for(let i=0;i<cars.length;i++){
+
+            text +=cars[i]+"<br>";
+        }
+        document.getElementById("demo").innerHTML=text;
+    </script>
+    <script>
+        let text1="";
+
+        for(let i=0;i<=5;i++){
+
+            text1 +=i;
+        }
+        document.getElementById("demo1").innerHTML=text1;
+    </script>
+    <script>
+        const car=["volvo","benz","java","rollsroys","bmw"];
+        let len,text2,i;
+
+        for(i=0,len=car.length, text2="" ; i<len ;i++){
+
+            text2+=cars[i]+"<br>";
+        }
+        document.getElementById("demo2").innerHTML=text2;
+    </script>
+
+<script>
+    let txt="";
+    let numbers ={"fname":"ramya","lname":"das","age":20};
+
+    for(let x in numbers){
+
+        txt+=numbers[x]+"<br>";
+    }
+    document.getElementById("demo3").innerHTML=txt;
+</script>
+
+<script>
+    const numberss =[43,22,11,43,35,66,77,1,5];
+    let tex = "";
+
+    numberss.forEach(finder);
+    document.getElementById("demo4").innerHTML=tex;
+
+    function finder(value,index,array){
+        tex +=value+"<br>";
+    }
+</script>
+
+<script>
+    const num =[12,33,44,55,66,77,99];
+    let xt="";
+    for(let x of num){
+        xt+=x+"<br>";
+    }
+    document.getElementById("demo5").innerHTML=xt;
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bills Store</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        tr,
+        td {
+            border: 1px solid black;
+            padding: 9px;
+            text-align: left;
+            background-color: lightgrey;
+        }
+
+        th {
+            border: 1px solid black;
+            padding: 8px;
+            background-color: lightseagreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <div id="submittable">
+        <h2>Submitted Items</h2>
+        <table id="submittedTable">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function generateTables() {
+            let table = "<table>";
+            table += "<tr><th>Product</th><th>Price</th><th>Quantity</th><th>Total</th><th>Delete</th><th>Add More</th><th>Submit</th></tr>";
+            table += createRow();
+            table += "</table>";
+
+            document.getElementById("container").innerHTML = table;
+        }
+
+        function createRow() {
+            return `
+            <tr>
+                <td><input type="text" placeholder="Enter product"required></td>
+                <td><input type="number" placeholder="Enter price" oninput="calctotal(this)"required></td>
+                <td><input type="number" placeholder="Enter quantity" oninput="calctotal(this)"required></td>
+                <td><span class="total">0</span></td>
+                <td><button onClick="handleDelete(this)">Delete</button></td>
+                <td><button onClick="handleAddrow(this)">Add More ++</button></td>
+                <td><button onClick="handleSubmit(this)">Submit</button></td>
+            </tr>`;
+        }
+
+        function handleDelete(del) {
+            const row = del.closest('tr');
+            row.remove();
+        }
+
+        function handleAddrow(addrow) {
+            const row = addrow.closest('tr');
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = createRow();
+            row.parentNode.insertBefore(newRow, row.nextSibling);
+        }
+
+        function calctotal(calc) {
+            const row = calc.closest('tr');
+            const price = parseFloat(row.querySelector('td:nth-child(2) input').value) || 0;
+            const quantity = parseFloat(row.querySelector('td:nth-child(3) input').value) || 0;
+            const total = price * quantity;
+            row.querySelector('.total').textContent = total;
+        }
+
+        function handleSubmit(submit) {
+            const row = submit.closest('tr');
+            const product = row.querySelector('td:nth-child(1) input').value;
+            const price = row.querySelector('td:nth-child(2) input').value;
+            const quantity = row.querySelector('td:nth-child(3) input').value;
+            const total = row.querySelector('.total').textContent;
+
+            const newSubRow = document.createElement("tr");
+            newSubRow.innerHTML = `
+                <td>${product}</td>
+                <td>${price}</td>
+                <td>${quantity}</td>
+                <td>${total}</td>
+                <td><button onClick="handleDelete(this)">Delete</button></td>
+            `;
+
+            const submittedTableBody = document.getElementById("submittedTable").querySelector("tbody");
+            submittedTableBody.append(newSubRow);
+        }
+
+        generateTables();
+    </script>
+</body>
+
+</html>

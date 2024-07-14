@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // map function
+        let priceUSD = [7,41,16,29];
+        let priceINR = priceUSD.map(val => val *83);
+        document.write(priceINR);
+
+        // filter function
+        let cost = [36,154,58,12,275,73,97];
+        let lessthan100 = cost.filter(val => val<100);
+        document.write(lessthan100);
+
+        // reduce function
+        const arr=[23,11,4,5,6,8,9,10];
+        let num=arr.reduce((total,vap,i)=>{return total-i;},0);
+        document.write(num);
+    </script>
+</body>
+</html>

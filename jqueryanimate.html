@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animate</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <button>animation</button>
+    <div style="width: 200px; height: 200px; background-color: aqua; position: absolute;"></div>
+
+    <script> 
+        $(document).ready(function(){
+          $("button").click(function(){
+            $("div").animate({top: '250px',opacity: '0.5',height: '150px',width: '150px'});
+          });
+        });
+
+        // $(document).ready(function(){
+        //     $("button").click(function(){
+        //         $("div").animate({
+        //         height: 'toggle'
+        //         });
+        //     });
+        // });
+    </script> 
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+</head>
+<body>
+    <form>
+        <label for="name">Name</label><br>
+        <input type="text" placeholder="enter name" id="name" name="name"value="name"><br>
+        <label for="email">email</label><br>
+        <input type="email" placeholder="enter email" id="email" name="email"value="email"><br>
+        <input type="radio" id="male" name="male"value="male">
+        <label for="male">male</label><br>
+        <input type="radio" id="female" name="female"value="female">
+        <label for="female">female</label><br>
+        <input type="radio" id="others" name="others"value="others">
+        <label for="others">others</label><br>
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+        <label for="vehicle1"> I have a bike</label><br>
+        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+        <label for="vehicle2"> I have a car</label><br>
+        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+        <label for="vehicle3"> I have a boat</label><br>
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+          <option value="Edge">
+          <option value="Firefox">
+          <option value="Chrome">
+          <option value="Opera">
+          <option value="Safari">
+        </datalist>
+        <form action="/action_page.php"
+oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+  0
+  <input type="range" id="a" name="a" value="50">
+  100 +
+  <input type="number" id="b" name="b" value="50">
+  =
+  <output name="x" for="a b"></output>
+  <br><br>
+  <input type="submit">
+</form>
+
+<form action="/action_page.php">
+    <label for="cars">Choose a car:</label>
+    <select name="cars" id="cars">
+      <optgroup label="Swedish Cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+      </optgroup>
+      <optgroup label="German Cars">
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </optgroup>
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
+  </form> -->
+
+  <!-- <html></html> -->
+
+  <!-- <form>	Defines an HTML form for user input
+    <input>	Defines an input control
+    <textarea>	Defines a multiline input control (text area)
+    <label>	Defines a label for an <input> element
+    <fieldset>	Groups related elements in a form
+    <legend>	Defines a caption for a <fieldset> element
+    <select>	Defines a drop-down list
+    <optgroup>	Defines a group of related options in a drop-down list
+    <option>	Defines an option in a drop-down list
+    <button>	Defines a clickable button
+    <datalist>	Specifies a list of pre-defined options for input controls
+    <output> -->
+
+        <!-- <input type="button">
+<input type="checkbox">
+<input type="color">
+<input type="date">
+<input type="datetime-local">
+<input type="email">
+<input type="file">
+<input type="hidden">
+<input type="image">
+<input type="month">
+<input type="number">
+<input type="password">
+<input type="radio">
+<input type="range">
+<input type="reset">
+<input type="search">
+<input type="submit">
+<input type="tel">
+<input type="text">
+<input type="time">
+<input type="url">
+<input type="week"> -->
+
+<!-- <css></css> -->
+<!-- Function	Description
+attr()	Returns the value of an attribute of the selected element
+calc()	Allows you to perform calculations to determine CSS property values
+conic-gradient()	Creates a conic gradient
+counter()	Returns the current value of the named counter
+cubic-bezier()	Defines a Cubic Bezier curve
+hsl()	Defines colors using the Hue-Saturation-Lightness model (HSL)
+hsla()	Defines colors using the Hue-Saturation-Lightness-Alpha model (HSLA)
+linear-gradient()	Creates a linear gradient
+max()	Uses the largest value, from a comma-separated list of values, as the property value
+min()	Uses the smallest value, from a comma-separated list of values, as the property value
+radial-gradient()	Creates a radial gradient
+repeating-conic-gradient()	Repeats a conic gradient
+repeating-linear-gradient()	Repeats a linear gradient
+repeating-radial-gradient()	Repeats a radial gradient
+rgb()	Defines colors using the Red-Green-Blue model (RGB)
+rgba()	Defines colors using the Red-Green-Blue-Alpha model (RGBA)
+var()	Inserts the value of a custom property -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+    <script>
+      const firstPromise = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(1), 5000)
+    })
+}
+
+const secondPromise = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(2), 3000)
+    })
+}
+
+async function* generator() {
+    const firstPromiseResult = await firstPromise();
+    yield firstPromiseResult;
+    const secondPromiseResult = await secondPromise();
+    yield secondPromiseResult;
+}
+
+let it = generator();
+for await (let value of it) {
+    console.log(value);
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functions</title>
+</head>
+<body>
+    <script>
+        // function declaration
+        let a='hello world';
+        show();
+        function show(){
+            document.write(a);
+        }
+        
+        //function expression or anonymous function
+        let vari=function(){
+            document.write(a);
+        }
+        vari();
+
+        //arrow function 
+        let arr=()=>{
+            document.write("i am a arrow functions");
+        }
+        arr();
+
+        let value =(num,num2)=>num*num2;
+        document.write( value(4,5));
+        document.write( value(4,6));
+        document.write( value(4,3));
+        document.write( value(4,2));
+        document.write( value(4,9));
+
+       //callback function
+       let callback=(callfun,n)=>{
+            callfun();
+            document.write(n);
+       }
+       callback(vari,"i am call back the function");
+    </script>
+</body>
+</html>

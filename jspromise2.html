@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise 2</title>
+</head>
+<body>
+    <script>
+        let arr=[11,22,33,44,55,66,77];
+        let pro=new Promise((resolve,reject)=>{
+            if(arr.length>=5){     
+                resolve(arr);
+            }
+            else if(arr.length<5){
+                reject("the given array length is less than 5");
+            }
+        });
+
+        pro
+        .then((val)=>console.log(val))
+        .catch((err)=>console.log(err))
+    </script>
+</body>
+</html>

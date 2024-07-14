@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hemoglobin child</title>
+</head>
+<body>
+    <script>
+        let g=(prompt('gender'));
+        let a=(prompt('age'));
+        let h=Number(prompt('hemo'));
+        if(g=='child'){
+            if(a=='birth'){
+                if(h>=13.5 && h<=24.0){
+                    document.write("hemoglobin normal");   
+                }
+                else{
+                    document.write("hemoglobin abnormal");   
+                } 
+            }
+            else if(a=='1m'){
+                if(h>=10.0 && h<=20.0){
+                    document.write("hemoglobin normal");   
+                }
+                else{
+                    document.write("hemoglobin abnormal");   
+                } 
+            }
+            else if(a=='2m'){
+                if(h>=13.5 && h<=24.0){
+                    document.write("hemoglobin normal");   
+                }
+                else{
+                    document.write("hemoglobin abnormal");   
+                } 
+            }
+            else if(a>='3m' && a<='6m'){
+                if(h>=9.5 && h<=14.0){
+                    document.write("hemoglobin normal");   
+                }
+                else{
+                    document.write("hemoglobin abnormal");   
+                } 
+            }
+            else if(a>=0.5 && a<2){
+                if(h>=10.5 && h<=13.5){
+                    document.write("hemoglobin normal");   
+                }
+                else{
+                    document.write("hemoglobin abnormal");   
+                } 
+            }
+            else if(a>=2 && a<6){
+                if(h>=11.5 && h<=13.5){
+                    document.write("hemoglobin normal");   
+                }
+                else{
+                    document.write("hemoglobin abnormal");   
+                } 
+            }
+            else if(a>=6 && a<12){
+                if(h>=11.5 && h<=15.5){
+                    document.write("hemoglobin normal");   
+                }
+                else{
+                    document.write("hemoglobin abnormal");   
+                } 
+            }
+            else{
+                document.write("invalid");   
+            }
+        }
+    </script>
+</body>
+</html>

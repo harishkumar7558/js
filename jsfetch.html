@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>name</th>
+            <th>age</th>
+            <th>phone</th>
+        </thead>
+        <tbody id="table">
+
+        </tbody>
+    </table>
+    <script>
+        fetch("./data.json")
+        .then(response => response.json())
+        .then((data)=>{
+            let table =document.getElementById('table');
+            data.map((val)=>{
+                let row = document.createElement('tr');
+                let col= document.createElement('td');
+                col.textContent=val.name;
+                let col1= document.createElement('td');
+                col1.textContent=val.age;
+                let col2= document.createElement('td');
+                col2.textContent=val.phone;
+                row.append(col,col1,col2);
+                table.append(row);
+            });
+            
+            
+            console.log(data);
+        });
+    </script>
+</body>
+</html>

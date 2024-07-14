@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+</head>
+<body>
+    <script>
+        // function expression
+        let a="hello everyone";
+        let h="i am giri";
+        let fun=function(){
+            document.write(a+h);
+        }
+        fun();
+
+        // arrow function
+        let b=()=>{
+            document.write("i am manoj");
+        }
+        b();
+        let z=(c,d)=>c-d;
+            document.write(z(10,3));
+        let z1=(c1,d1)=>c1+d1;
+            document.write(z1(100,3));
+        let z2=(c2,d2)=>c2*d2;
+            document.write(z2(7,10));
+        let z3=(c3,d3)=>c3/d3;
+            document.write(z3(8,2));
+        let z4=(c4,d4)=>c4%d4;
+            document.write(z4(9,2));
+        
+        // callback function
+        let callfun=(call,back)=>{
+            document.write(call);
+            back();
+        }
+        callfun(a,b);
+    </script>
+</body>
+</html>

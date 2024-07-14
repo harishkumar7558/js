@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        hi
+    </div>
+    <button id="btn1">show</button>
+    <button id="btn2">hide</button>
+    <script>
+        $(document).ready(function(){
+            $('#btn1').dblclick(function(){
+                $("div").toggle();
+            })
+            // $('#btn2').click(function(){
+            //     $("div").hide();
+            // })
+        })
+        // document.getElementsByTagName('div')[0].innerHTML="world";
+    </script>
+</body>
+</html>

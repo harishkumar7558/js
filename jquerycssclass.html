@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css class</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .blue {
+          color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hi to everyone</h1>
+    <h2>Learn something</h2>
+
+    <p>Dhoni is the one of the best captain in cricket.</p>
+    <p>Taj mahal is one of the seven wonder.</p>
+
+    <button>click</button>
+  
+    <script>
+        $(document).ready(function(){
+          $("button").click(function(){
+            $("h1, h2, p").toggleClass("blue");
+          });
+        });
+    </script>
+</body>
+</html>

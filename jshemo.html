@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hemoglobin</title>
+</head>
+<body>
+    <script>
+        let g=(prompt('gender'));
+        let a=Number(prompt('age'));
+        let h=Number(prompt('hemo'));
+        if(g=='female'){
+            if(a>=12 && a<=18){
+                if(h>=12.0 && h<=16.0){
+                    document.write("hemoglobin normal");   
+                }
+                else{
+                    document.write("hemoglobin abnormal");   
+                } 
+            }
+            else if(a>18 && a<=100){
+                if(h>=12.1 && h<=15.1){
+                    document.write("hemoglobin normal");   
+                }
+                else{
+                    document.write("hemoglobin abnormal");   
+                } 
+            }
+            else{
+                document.write("invalid");   
+            }
+        }
+        if(g=='male'){
+            if(a>=12 && a<=18){
+                if(h>=13.0 && h<=16.0){
+                    document.write("hemoglobin normal");   
+                }
+                else{
+                    document.write("hemoglobin abnormal");   
+                } 
+            }
+            else if(a>18 && a<=100){
+                if(h>=13.6 && h<=17.7){
+                    document.write("hemoglobin normal");   
+                }
+                else{
+                    document.write("hemoglobin abnormal");   
+                } 
+            }
+            else{
+                document.write("invalid");   
+            }
+        }
+       
+    </script>
+</body>
+</html>

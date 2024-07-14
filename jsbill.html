@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container w-100 border border-3 mt-5 p-4">
+        <form id="form" >
+            <div class="mb-3">
+                <label for="name">Product Name</label><br>
+                <input type="text" id="prodname" name="username" style="width: 30%;"><br>
+            </div>
+            <div class="mb-3">
+                <label for="name">Product Price</label><br>
+                <input type="number" id="prodprice" name="username" style="width: 30%;"><br>
+            </div>
+            <div class="mb-3">
+                <label for="name">Quantity</label><br>
+                <input type="number" id="quantity" name="username" style="width: 30%;"><br>
+            </div>
+            
+            <input class="btn btn-info"  type="submit" name="username">
+        </form>
+    </div>
+
+    <div class="container mt-5 border border-3" style="width: 45%;">
+        <div class="mt-5 ms-3 me-3">
+            <h2 class="text-center">Daily Supermart</h2>
+            <h6 class="text-center">GSTIN : 5346HRWD728V3</h6>
+            <div class="d-flex justify-content-around mt-3">
+                <p>Cashier ID : 3051</p>
+                <p>Date : 16-11-2023</p>
+            </div>
+            <div class="d-flex justify-content-around">
+                <p>Section ID : 1</p>
+                <p>Time : 10:15 am</p>
+            </div>
+            <h5>Quick Service : Q43</h5>
+            <h5>Bill no : 43</h5>
+            <p>------------------------------------------------------------------------------------</p>
+        </div>
+        <table class="table">
+            <thead>
+                <th>Product name</th>
+                <th>Product price</th>
+                <th>Quantity</th>
+                <th>Product total</th>
+                <th>Tax</th>
+                <th>Net total</th>
+            </thead>
+            <tbody id="table">
+    
+            </tbody>
+        </table>
+        <div class="m-3">
+            <p>------------------------------------------------------------------------------------</p>
+            <div id="total" style="text-align: end;">
+            </div>
+            <p>------------------------------------------------------------------------------------</p>
+            <div>
+                <p class="text-end">Paid by : cash</p>
+                <div class="mt-5 mb-5">
+                    <h5 class="text-center">THANK YOU</h5>
+                    <h5 class="text-center">PLEASE VISIT AGAIN</h5>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>   
+    let total1=0;
+    let form = document.getElementById('form');
+    form.addEventListener('submit',(event)=>{
+        event.preventDefault();
+        let prodname=document.getElementById('prodname').value;
+        let prodprice=document.getElementById('prodprice').value;
+        let quan=document.getElementById('quantity').value;
+
+        let table=document.getElementById('table');
+        let row =table.insertRow(-1);
+
+        let cell = row.insertCell(0);
+        cell.textContent=prodname;
+
+        let cell1 = row.insertCell(1);
+        cell1.textContent=prodprice;
+        
+        let cell2 = row.insertCell(2);
+        cell2.textContent=quan;
+       
+
+        // total
+        let cell3 = row.insertCell(3);
+        let total=prodprice * quan;
+        cell3.textContent=total;
+        
+
+        let cell4 = row.insertCell(4);
+        let ptax=total*(12/100);
+        cell4.textContent=ptax;
+        
+        let cell5 = row.insertCell(5);
+        cell5.textContent=ptax+total;
+        total1+=ptax+total;
+        document.getElementById('total').innerHTML="Grand Total : "+total1;
+
+        row.append(cell,cell1,cell2,cell3,cell4,cell5);
+        table.append(row);
+        form.reset();
+
+    });
+
+    </script>
+</body>
+</html>

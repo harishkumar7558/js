@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Process</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        tr,
+        td {
+            border: 1px solid black;
+            padding: 9px;
+            text-align: left;
+            background-color: antiquewhite;
+        }
+
+        th {
+            border: 1px solid black;
+            background-color: cadetblue;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script>
+        function generateTables() {
+            let table = "<table>";
+            table += "<tr><th>Product</th><th>Price</th><th>Quantity</th><th>Total</th><th>Delete</th><th>Add More</th></tr>";
+
+            table += "<tr>";
+            table += `<td><input type="text" placeholder="Enter product"></td>`;
+            table += `<td><input type="number" placeholder="Enter price" oninput="calc(this)"></td>`;
+            table += `<td><input type="number" placeholder="Enter quantity" oninput="calc(this)"></td>`;
+            table += `<td><span class="total">0</span></td>`;
+            table += `<td><button onclick="deleteTable(this)">Delete</button></td>`;
+            table += `<td><button onclick="addMore(this)">Add More ++</button></td>`;
+            table += "</tr>";
+
+            table += "</table>";
+            const container = document.getElementById("container");
+            container.innerHTML = table;
+        }
+
+        function deleteTable(del) {
+            const row = del.closest("tr");
+            row.remove();
+        }
+
+        function addMore(add) {
+            const row = add.closest("tr");
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                <td><input type="text" placeholder="Enter product"></td>
+                <td><input type="number" placeholder="Enter price" oninput="calc(this)"></td>
+                <td><input type="number" placeholder="Enter quantity" oninput="calc(this)"></td>
+                <td><span class="total">0</span></td>
+                <td><button onclick="deleteTable(this)">Delete</button></td>
+                <td><button onclick="addMore(this)">Add More ++</button></td>
+            `;
+            row.parentNode.insertBefore(newRow, row.nextSibling);
+        }
+
+        function calc(cal) {
+            const rows = cal.closest("tr");
+            const priceInput = rows.querySelector('td:nth-child(2) input');
+            const quantityInput = rows.querySelector('td:nth-child(3) input');
+            const totalCell = rows.querySelector('.total');
+
+            const price = parseFloat(priceInput.value) || 0;
+            const quantity = parseFloat(quantityInput.value) || 0;
+            const total = price * quantity;
+
+            totalCell.textContent = total.toFixed(2); // Display total with two decimal places
+        }
+
+        generateTables();
+    </script>
+</body>
+
+</html>
